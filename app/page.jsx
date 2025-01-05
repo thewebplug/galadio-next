@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Image1 from "@/public/assets/Cover (2).png";
-import Sidebar from "./components/sideBar";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import ArtGrid from "./components/artGrid";
