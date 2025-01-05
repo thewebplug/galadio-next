@@ -1,0 +1,42 @@
+.primary-button, %primary-button {
+    width: 100%;
+    max-width: 320px;
+    height: 48px;
+    border-radius: 24px;
+    background: linear-gradient(73.19deg, #dc79ff 0%, #256bfa 95.06%);
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.trans-button, %trans-button {
+    width: 100%;
+    max-width: 320px;
+    height: 48px;
+    border-radius: 24px;
+    background: none;
+    border: 1px solid #4D3EFFE5;
+    outline: none;
+    font-size: 18px;
+    color: #4D3EFFE5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secondary-button, %secondary-button {
+    background: linear-gradient(270deg, #C3C2FF 0%, #9DBEFF 100%);
+    width: 93px;
+    height: 36px;
+    border-radius: 21px;
+    color: #1C309DB2;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}

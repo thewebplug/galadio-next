@@ -1,0 +1,129 @@
+.art {
+    margin-bottom: 38px;
+  padding-left: 161px;
+width: 100%;
+max-width: 1440px;
+padding: 92px;
+margin: auto;
+padding-top: 43px;
+
+&__back {
+    @extend %title-16;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 30px;
+    font-family: "Bricolage Grotesque";
+}
+
+&__grid {
+    display: grid;
+    grid-template-columns: auto 236px;
+    gap: 24px;
+    align-items: end;
+    width: fit-content;
+    margin-bottom: 24px;
+
+    &__image {
+        width: 100%;
+        max-width: 679px;
+        height: auto;
+    }
+
+    &__user {
+        &__title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+
+            & > div {
+                & > a {
+                    display: block;
+        background: radial-gradient(82.1% 1863.84% at 4.94% 67.65%, rgba(77, 62, 255, 0.9) 0%, rgba(190, 119, 254, 0.9) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+                }
+
+                & > button {
+                    @extend %secondary-button;
+                }
+            }
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+    }
+
+}
+&__title-group {
+    
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 533px;
+    margin-bottom: 8px;
+    gap: 14px;
+
+    & >:first-child {
+        @extend %title-40;
+    font-weight: 700;
+    } 
+
+    &__actions {
+        display: flex;
+        gap: 8px;
+    }
+}
+
+&__details {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+
+    & > div {
+        @extend %title-14;
+        color: #435971;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+}
+
+&__price {
+    width: 100%;
+    max-width: 533px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    & > button {
+        @extend %trans-button;
+        font-size: 16px;
+        max-width: fit-content;
+        height: 36px;
+        padding: 0 17px;
+    }
+
+    & > div {
+        @extend %title-24;
+        font-weight: 700;
+        color: #727888;
+
+        & > span {
+            background: linear-gradient(97.02deg, #4AB1F1 -9.15%, #566CEC 27.43%, #D749AF 62.24%, #FF7C51 104.13%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+}

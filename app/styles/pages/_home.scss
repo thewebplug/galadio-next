@@ -1,0 +1,56 @@
+
+.home {
+  margin-bottom: 38px;
+  padding-left: 161px;
+width: 100%;
+max-width: 1440px;
+padding: 92px;
+margin: auto;
+  &__hero {
+    width: 100%;
+    margin-bottom: 100px;
+    // background: yellow;
+    &__title {
+      margin: auto;
+      margin-bottom: 2rem;
+      max-width: 25ch;
+      width: 100%;
+      font-family: "Bricolage Grotesque";
+      font-size: 50px;
+      font-weight: 700;
+      text-align: center;
+      span {
+        background: linear-gradient(
+          89.28deg,
+          #4ab1f1 55.67%,
+          #566cec 65.26%,
+          #d749af 73.18%,
+          #ff7c51 82.35%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    &__subtitle {
+      width: 100%;
+      max-width: 105ch;
+      margin: auto;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      line-height: 20px;
+      margin-bottom: 2.4rem;
+    }
+
+    &__img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: auto;
+    }
+  }
+
+ 
+}
+

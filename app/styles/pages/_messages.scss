@@ -1,0 +1,304 @@
+.messages {
+  margin-bottom: 38px;
+  padding-left: 161px;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 92px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 3.04fr;
+  height: 100vh;
+  padding-right: 0;
+
+  &__list {
+    width: 100%;
+    border-right: 1px solid #EEEEEE;
+    height: 100%;
+    padding-top: 45px;
+    &__title {
+      @extend %title-24;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 18px;
+      padding: 0 21px;
+      font-family: "Bricolage Grotesque";
+    }
+
+    &__search {
+      width: 90%;
+      padding: 0 21px;
+      height: 36px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+      background: #EEEEEE;
+      font-family: "Bricolage Grotesque";
+      margin: auto;
+      margin-bottom: 11px;
+
+      &::placeholder {
+        color: #00000073;
+        font-family: "Bricolage Grotesque";
+      }
+
+      & > input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: none;
+      }
+    }
+
+    &__sort {
+      @extend %title-12;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      color: #000000A6;
+      font-family: "Bricolage Grotesque";
+      padding: 0 24px;
+      margin-bottom: 18px;
+
+      & > select {
+        @extend %title-14;
+      font-weight: 400;
+      color: #2D9CDB;
+      width: fit-content;
+      border: none;
+      background: none;
+      }
+    }
+
+    &__card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: "Bricolage Grotesque";
+      padding: 9px 21px;
+      cursor: pointer;
+
+      &__group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &__user {
+          &__name {
+            @extend %title-14;
+            color: #000000D9;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+          }
+
+          &__message {
+            @extend %title-14;
+            font-weight: 400;
+            color: #00000073;
+          }
+          &__typing {
+            @extend %title-14;
+            font-weight: 400;
+            color: #27AE60;
+          }
+        }
+
+        &__image {
+          position: relative;
+
+          &__online {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+          }
+        }
+
+      }
+      &__info {
+        &__time {
+          @extend %title-12;
+          font-weight: 400;
+          color: #000000A6;
+          margin-bottom: 6px;
+        }
+      }
+    }
+
+    &__card-read {
+      background: #EEEEEE;
+    }
+  }
+
+  &__chat {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 61px auto 48px;
+
+    &__header {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #EEEEEE;
+      border-right: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px;
+
+      &__user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        & >:last-child {
+          & >:first-child {
+            @extend %title-16;
+            font-weight: 500;
+            color: #000000D9;
+            margin-bottom: 4px;
+          }
+        }
+        &__status {
+          @extend %title-14;
+          font-weight: 400;
+          color: #27AE60;
+        }
+      }
+
+      &__actions {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__inner {
+      padding: 20px 53px;
+      height: 100%;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &__image {
+        position: relative;
+        width: 100%;
+        max-width: 240px;
+        height: auto;
+        margin-bottom: 4px;
+      }
+
+      &__message {
+        display: flex;
+        gap: 9px;
+        margin-bottom: 15px;
+
+        & > div {
+          padding: 12px 18px;
+          background: #F4F4F7;
+          border-radius: 16px;
+
+        }
+
+        &__time {
+          @extend %title-12;
+          width: 100%;
+          font-weight: 300;
+          color: #00000073;
+          display: flex;
+          gap: 8px;
+          font-family: "Bricolage Grotesque";
+          margin-top: 6px;
+        }
+      }
+
+      &__message-sender {
+        & > div {
+        border-top-left-radius: 0;
+        }
+      }
+      &__message-receiver {
+        float: right;
+        & > div {
+        border-top-right-radius: 0;
+        }
+
+        .messages__chat__inner__message__time {
+          justify-content: end;
+        }
+      }
+
+      &__time-lapse {
+        position: relative;
+        width: 100%;
+        height: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 25px;
+        &__line {
+          width: 100%;
+          height: 1px;
+          background: #EEEEEE;
+        }
+
+        & >:last-child {
+          @extend %title-12;
+          font-weight: 500;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: #FFF;
+          width: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #00000073;
+          font-family: "Bricolage Grotesque";
+        }
+      }
+    }
+    &__footer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  
+  & > input {
+    width: 100%;
+    height: 100%;
+    height: 36px;
+    background: #FAFAFA;
+    border: none;
+    border-radius: 12px;
+    padding: 0 18px;
+  
+    &::placeholder {
+      font-family: "Bricolage Grotesque";
+    }
+  
+  
+  }
+
+  & > button {
+    @extend %title-14;
+    color: #27AE60;
+    white-space: nowrap;
+    font-family: "Bricolage Grotesque";
+    background: none;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+
+  }
+    }
+  }
+
+}

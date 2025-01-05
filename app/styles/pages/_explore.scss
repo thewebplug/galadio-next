@@ -1,0 +1,94 @@
+
+.explore {
+  width: 100%;
+  max-width: 1440px;
+  padding: 92px 92px;
+  margin: 0 auto;
+  padding-top: 52px;
+&__title {
+  @extend %title-40;
+  margin-bottom: 49px;
+  font-family: "Bricolage Grotesque";
+}
+&__title-underlined {
+  @extend %title-40;
+  font-family: "Bricolage Grotesque";
+  width: 100%;
+  max-width: 1177px;
+  border-bottom: 2px solid #2B2B2B;
+  margin-bottom: 49px;
+  padding-bottom: 16px;
+}
+&__subtitle-underlined {
+  @extend %title-18;
+  width: 100%;
+  max-width: 1177px;
+  border-bottom: 2px solid #2B2B2B;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  font-weight: 500;
+
+  & > span {
+    font-family: "Bricolage Grotesque";
+    font-weight: 700;
+    margin-left: 10px;
+
+  }
+}
+
+
+&__tabs {
+  width: 100%;
+  max-width: 1177px;
+  border-bottom: 2px solid #2B2B2B;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+
+  & >:first-child {
+    width: 50px;
+  }
+
+  & > div {
+    width: 178px;
+    height: 36px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: "Bricolage Grotesque";
+  }
+
+  &__active {
+    background: #1C1C1E;
+    color: #FFFFFF;
+  }
+}
+
+&__filters {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    height: fit-content;
+    white-space: nowrap;
+    padding: 8px 10px;
+    background: #F0F0F0;
+    border-radius: 30px;
+    font-size: 13px;
+  }
+}
+
+ 
+}
+
+
