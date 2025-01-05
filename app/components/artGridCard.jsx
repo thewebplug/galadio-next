@@ -40,6 +40,7 @@ export default function ArtGridCard() {
           </linearGradient>
         </defs>
       </svg>
+      {/* kick */}
 
       <Image src={Image4} width={258}m height={258} alt="" />
       <div className="grid__inner__card__title">
