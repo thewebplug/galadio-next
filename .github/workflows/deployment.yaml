@@ -31,7 +31,7 @@ jobs:
       - name: Build React Project with vite
         run: npm run build
         env:
-          VITE_API: ${{ secrets.API }}
+          NEXT_API: ${{ secrets.API }}
 
       - name: "Configure AWS Credentials" 
         uses: aws-actions/configure-aws-credentials@v4.0.2
@@ -44,7 +44,7 @@ jobs:
 
       - name: Sync to S3
         id: deployment
-        run: aws s3 sync ./dist ${{ secrets.BUCKET_NAME }} --acl private
+        run: aws s3 sync ./build s3://${{ secrets.BUCKET_NAME }} --acl private
 
       - name: Invalidate Cloudfront Cache
         id: invalidation
