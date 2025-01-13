@@ -18,18 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     name: webapp-frontend
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Install dependencies
         run: |
           npm config set legacy-peer-deps true
           npm install --legacy-peer-deps
           # npm install
           sudo npm install -g npm@latest
-
-      # - name: Install Dart Sass
-      #   run: sudo snap install dart-sass
-
-      - name: Checkout
-        uses: actions/checkout@v4
 
       - name: Build React Project with vite
         run: npm run build
