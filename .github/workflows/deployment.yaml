@@ -43,7 +43,8 @@ jobs:
 
       - name: Sync to S3
         id: deployment
-        run: aws s3 sync ./build s3://${{ secrets.BUCKET_NAME }} --acl private
+        run: |
+          aws s3 sync ./build s3://${{ secrets.BUCKET_NAME }} --acl private
 
       - name: Invalidate Cloudfront Cache
         id: invalidation
