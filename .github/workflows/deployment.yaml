@@ -31,6 +31,9 @@ jobs:
         run: npm run build
         env:
           NEXT_API: ${{ secrets.API }}
+      
+      - name: Export the static site
+        run: npm run export
 
       - name: "Configure AWS Credentials" 
         uses: aws-actions/configure-aws-credentials@v4.0.2
@@ -44,7 +47,7 @@ jobs:
       - name: Sync to S3
         id: deployment
         run: |
-          aws s3 sync ./public s3://${{ secrets.BUCKET_NAME }} --acl private
+          aws s3 sync ./out s3://${{ secrets.BUCKET_NAME }} --acl private
 
       - name: Invalidate Cloudfront Cache
         id: invalidation
