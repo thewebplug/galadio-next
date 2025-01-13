@@ -33,23 +33,6 @@ jobs:
         env:
           VITE_API: ${{ secrets.API }}
 
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.3.1
-        with:
-          name: galadio-webapp
-          path: ./dist
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    name: Deploy to S3
-    steps:
-      - name: Download artifacts (Docker images) from previous workflows
-        uses: actions/download-artifact@v4
-        with:
-          name: galadio-webapp
-          path: ./dist
-
       - name: "Configure AWS Credentials" 
         uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
@@ -61,7 +44,7 @@ jobs:
 
       - name: Sync to S3
         id: deployment
-        run: aws s3 sync public/ s3://${{ secrets.BUCKET_NAME }} --acl private
+        run: aws s3 sync ./dist s3://${{ secrets.BUCKET_NAME }} --acl private
 
       - name: Invalidate Cloudfront Cache
         id: invalidation
