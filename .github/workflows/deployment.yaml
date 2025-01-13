@@ -44,7 +44,7 @@ jobs:
       - name: Sync to S3
         id: deployment
         run: |
-          aws s3 sync ./app s3://${{ secrets.BUCKET_NAME }} --acl private
+          aws s3 sync ./public s3://${{ secrets.BUCKET_NAME }} --acl private
 
       - name: Invalidate Cloudfront Cache
         id: invalidation
