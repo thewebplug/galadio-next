@@ -9,9 +9,9 @@ permissions:
   contents: read
   id-token: write
 
-defaults:
-  run:
-    shell: bash
+# defaults:
+#   run:
+#     shell: bash
 
 jobs:
   build:
@@ -25,10 +25,9 @@ jobs:
         run: |
           npm config set legacy-peer-deps true
           npm install --legacy-peer-deps
-          # npm install
           sudo npm install -g npm@latest
 
-      - name: Build React Project with vite
+      - name: Build NextJS Project with Next
         run: npm run build
         env:
           NEXT_API: ${{ secrets.API }}
@@ -44,7 +43,7 @@ jobs:
 
       - name: Sync to S3
         id: deployment
-        run: aws s3 sync ./build s3://${{ secrets.BUCKET_NAME }} --acl private
+        run: aws s3 sync ./build ${{ secrets.BUCKET_NAME }} --acl private
 
       - name: Invalidate Cloudfront Cache
         id: invalidation
