@@ -53,13 +53,14 @@ jobs:
           name: galadio-webapp
           path: ./public
 
-      - name: "Configure AWS Credentials"
+      - name: "Configure AWS Credentials" 
         uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
           audience: sts.amazonaws.com
           role-to-assume: ${{ secrets.ASSUME_ROLE_ARN }}
           role-session-name: Galadio
           mask-aws-account-id: true
+          aws-region: us-east-1
 
       - name: Sync to S3
         id: deployment
