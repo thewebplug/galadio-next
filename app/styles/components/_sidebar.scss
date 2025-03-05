@@ -152,6 +152,12 @@
   .sidebar-inactive {
     width: 88px;
     padding: 40px 15px;
+    transition: 0.4s;
+
+    @media (max-width: $tablet-pro) {
+      
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
 
     .sidebar__header {
       & > :last-child {

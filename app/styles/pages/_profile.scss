@@ -1,34 +1,39 @@
 .profile {
+  width: 100%;
+  margin: auto;
+  &__header {
     width: 100%;
-    margin: auto;
-    &__header {
+    height: 230px;
+    position: relative;
+    background: #22242c;
+    z-index: 1;
+
+    &__inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 1296px;
+      padding: 38px 20px 90px 102px;
+      margin: auto;
+
+      @media (max-width: $tablet-pro) {
+        padding: 52px 20px 90px 20px;
+      }
+
+      &__title {
+        @extend %title-30;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
         width: 100%;
-        height: 230px;
-        position: relative;
-        background: #22242C;
-        z-index: 1;
-
-        &__inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-max-width: 1440px;
-padding: 38px 92px;
-margin: auto;
-
-&__title {
-    @extend %title-30;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #FFFFFF;
-}
-        }
+        text-align: center;
+      }
     }
+  }
 
-
-&__user {
+  &__user {
     position: relative;
     width: 100%;
     margin: auto;
@@ -38,64 +43,63 @@ margin: auto;
     align-items: center;
     justify-content: center;
     padding: 15px 0;
-    background: #F5F5F5;
+    background: #f5f5f5;
 
     & > img {
-        border: 10px solid #FFF;
-        border-radius: 50%;
-        margin-bottom: 17px;
-        margin-top: -100px;
-
+      border: 10px solid #fff;
+      border-radius: 50%;
+      margin-bottom: 17px;
+      margin-top: -100px;
     }
 
     &__name {
-        display: flex;
-        align-items: start;
-        gap: 5px;
-        margin-bottom: 5px;
+      display: flex;
+      align-items: start;
+      gap: 5px;
+      margin-bottom: 5px;
 
-        & >:first-child {
-            @extend %title-18;
+      & > :first-child {
+        @extend %title-18;
         font-weight: 700;
         font-family: "Bricolage Grotesque";
-        color: #4A576F;
-        }
-        & >:last-child {
-            @extend %title-14;
+        color: #4a576f;
+      }
+      & > :last-child {
+        @extend %title-14;
         font-weight: 500;
         color: #374957;
-        }
+      }
     }
 
     &__role {
-        @extend %title-14;
-        font-weight: 500;
-        color: #374957B2;
-        margin-bottom: 14px;
-        width: 100%;
-        max-width: 23ch;
+      @extend %title-14;
+      font-weight: 500;
+      color: #374957b2;
+      margin-bottom: 14px;
+      width: 100%;
+      max-width: 23ch;
     }
 
     & > button {
-        @extend %trans-button;
-        border-color: #374957;
-        max-width: 114px;
-        height: 31px;
-        margin-bottom: 17px;
-        font-size: 14px;
-        color: #374957;
-        gap: 10px;
+      @extend %trans-button;
+      border-color: #374957;
+      max-width: 114px;
+      height: 31px;
+      margin-bottom: 17px;
+      font-size: 14px;
+      color: #374957;
+      gap: 10px;
     }
 
     &__location {
-        @extend %title-14;
-        display: flex;
-        align-items: center;
-        gap: 3px;
+      @extend %title-14;
+      display: flex;
+      align-items: center;
+      gap: 3px;
     }
-}
+  }
 
-&__form {
+  &__form {
     max-width: 374px;
     width: 100%;
     display: flex;
@@ -103,68 +107,79 @@ margin: auto;
     margin: 38px auto;
 
     &__title {
-        @extend %title-30;
-        font-weight: 700;
-        color: #000000;
-        margin-bottom: 24px;
-        font-family: "Bricolage Grotesque";
+      @extend %title-30;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 24px;
+      font-family: "Bricolage Grotesque";
     }
 
-    
-
-    & > input, & > select, & > textarea {
-        @extend %normal-input;
-        margin-bottom: 14px;
+    & > input,
+    & > select,
+    & > textarea {
+      @extend %normal-input;
+      margin-bottom: 14px;
     }
     & > textarea {
-        height: 120px;
-        border-radius: 8px;
+      height: 120px;
+      border-radius: 8px;
     }
 
     & > button {
-        @extend %primary-button;
-        max-width: 100%;
-        margin-top: 6px;
+      @extend %primary-button;
+      max-width: 100%;
+      margin-top: 6px;
     }
-}
+  }
 
-&__art {
+  &__art {
     margin-bottom: 38px;
-  padding-left: 161px;
-width: 100%;
-max-width: 1440px;
-padding: 38px 92px;
-margin: auto;
-
-&__title {
-    @extend %title-30;
-    font-family: "Bricolage Grotesque";
+    padding-left: 161px;
     width: 100%;
-    border-bottom: 2px solid #4A576F33;
-    margin-bottom: 31px;
-    padding-bottom: 16px;
+    max-width: 1296px;
+    padding: 52px 20px 90px 102px;
+    margin: auto;
+
+    @media (max-width: $tablet-pro) {
+        padding: 52px 20px 90px 20px;
+      }
+
+    &__title {
+      @extend %title-30;
+      font-family: "Bricolage Grotesque";
+      width: 100%;
+      border-bottom: 2px solid #4a576f33;
+      margin-bottom: 31px;
+      padding-bottom: 16px;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 38px;
+
+      @media (max-width: $tablet-pro) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      @media (max-width: $tablet) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 38px;
-  }
-}
-
-&__help-banner {
+  &__help-banner {
     @extend %title-20;
     font-weight: 600;
     color: #374957;
     width: 100%;
     height: 92px;
-    background: #F5F5F5;
+    background: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
-&__help-title {
+  &__help-title {
     @extend %title-14;
     width: 100%;
     max-width: 85ch;
@@ -174,7 +189,7 @@ margin: auto;
     margin: auto;
     margin-top: 39px;
     line-height: 110%;
-}
 
-
+    
+  }
 }

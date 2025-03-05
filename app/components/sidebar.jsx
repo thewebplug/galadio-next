@@ -1,14 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import Logo from "@/public/assets/logo.svg";
 import Image3 from "@/public/assets/avatar.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Sidebar() {
-  const [active, setActive] = useState(false);
+export default function Sidebar({active, setActive}) {
   const pathname = usePathname();
   
 
@@ -147,7 +145,7 @@ export default function Sidebar() {
         <div>Studio</div>
       </Link>
       <Link
-        href="/profile/explore"
+        href="/explore"
         prefetch={true}
         className={`sidebar__item ${pathname?.includes("explore") && "sidebar__active"}`}
         onClick={() => setActive(false)}

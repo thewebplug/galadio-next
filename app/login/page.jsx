@@ -14,7 +14,11 @@ export default function Login() {
           height={36}
           alt=""
           />
-          Galadio
+          <div>Galadio</div>
+        </div>
+
+        <div className="login__card1__title-pro">
+        Welcome Back!
         </div>
 
         <h1 className="login__card1__title">

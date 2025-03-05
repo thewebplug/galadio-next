@@ -22,8 +22,10 @@ export default function Home() {
           </h2>
           <Image src={Image1} className="home__hero__img" alt="" />
         </div>
+<div className="home__grid">
 
         <ArtGrid paginationType="load" />
+</div>
       </main>
 
       <Footer />

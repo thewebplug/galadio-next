@@ -2,13 +2,22 @@
   margin-bottom: 38px;
   padding-left: 161px;
   width: 100%;
-  max-width: 1440px;
-  padding: 0 92px;
+  max-width: 1296px;
+  padding: 0 20px 0 102px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 3.04fr;
   height: 100vh;
   padding-right: 0;
+
+  @media (max-width: $tablet-pro) {
+    grid-template-columns: 1fr;
+  }
+  
+
+  @media (max-width: $tablet-pro) {
+    padding: 0;
+  }
 
   &__list {
     width: 100%;
@@ -22,6 +31,11 @@
       margin-bottom: 18px;
       padding: 0 21px;
       font-family: "Bricolage Grotesque";
+
+      @media (max-width: $tablet-pro) {
+        padding: 0 20px;
+      }
+      
     }
 
     &__search {
@@ -37,6 +51,11 @@
       font-family: "Bricolage Grotesque";
       margin: auto;
       margin-bottom: 11px;
+
+      @media (max-width: $tablet-pro) {
+        width: 96%;
+      }
+      
 
       &::placeholder {
         color: #00000073;
@@ -62,6 +81,10 @@
       padding: 0 24px;
       margin-bottom: 18px;
 
+      @media (max-width: $tablet-pro) {
+        padding: 0 20px;
+      }
+
       & > select {
         @extend %title-14;
       font-weight: 400;
@@ -79,6 +102,7 @@
       font-family: "Bricolage Grotesque";
       padding: 9px 21px;
       cursor: pointer;
+      
 
       &__group {
         display: flex;
@@ -140,6 +164,11 @@
     grid-template-columns: 1fr;
     grid-template-rows: 61px auto 48px;
 
+    @media (max-width: $tablet-pro) {
+      display: none;
+    }
+    
+
     &__header {
       width: 100%;
       height: 100%;
@@ -148,6 +177,8 @@
       display: flex;
       justify-content: space-between;
       padding: 0 16px;
+
+
 
       &__user {
         display: flex;
@@ -179,6 +210,10 @@
       padding: 20px 53px;
       height: 100%;
       overflow-y: auto;
+
+      @media (max-width: $tablet-pro) {
+        padding: 20px;
+      }
 
       &::-webkit-scrollbar {
         display: none;
@@ -299,6 +334,15 @@
 
   }
     }
+  }
+
+  &__chat-mobile {
+    display: none;
+
+    @media (max-width: $tablet-pro) {
+      display: grid !important;
+    }
+    
   }
 
 }
