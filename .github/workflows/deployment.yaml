@@ -1,0 +1,57 @@
+name: Deploy frontend webapp to S3
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+
+# defaults:
+#   run:
+#     shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: webapp-frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          npm config set legacy-peer-deps true
+          npm install --legacy-peer-deps
+          sudo npm install -g npm@latest
+
+      - name: Build NextJS Project with Next
+        run: npm run build
+        env:
+          NEXT_API: ${{ secrets.API }}
+      
+      - name: Export the static site
+        run: npm run export
+
+      - name: "Configure AWS Credentials" 
+        uses: aws-actions/configure-aws-credentials@v4.0.2
+        with:
+          audience: sts.amazonaws.com
+          role-to-assume: ${{ secrets.ASSUME_ROLE_ARN }}
+          role-session-name: Galadio
+          mask-aws-account-id: true
+          aws-region: us-east-1
+
+      - name: Sync to S3
+        id: deployment
+        run: |
+          aws s3 sync ./out s3://${{ secrets.BUCKET_NAME }} --acl private
+
+      - name: Invalidate Cloudfront Cache
+        id: invalidation
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
